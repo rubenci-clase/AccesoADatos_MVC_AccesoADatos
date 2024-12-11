@@ -7,12 +7,12 @@ public class Reserva {
 	int idReserva;
 	int idHabitacion;
 	int idCliente;
-	String fechaEntrada;
-	String fechaSalida;
-	int precioTotal;
+	LocalDate fechaEntrada;
+	LocalDate fechaSalida;
+	float precioTotal;
 	
-	public Reserva(int idHabitacion, int idCliente, String fechaEntrada, String fechaSalida,
-			int precioTotal) {
+	public Reserva(int idHabitacion, int idCliente, LocalDate fechaSalida,
+			LocalDate fechaEntrada, float precioTotal) {
 		
 		this.idReserva = idReservaAnterior;
 		this.idHabitacion = idHabitacion;
@@ -47,23 +47,23 @@ public class Reserva {
 		this.idCliente = idCliente;
 	}
 
-	public String getFechaEntrada() {
+	public LocalDate getFechaEntrada() {
 		return fechaEntrada;
 	}
 
-	public void setFechaEntrada(String fechaEntrada) {
+	public void setFechaEntrada(LocalDate fechaEntrada) {
 		this.fechaEntrada = fechaEntrada;
 	}
 
-	public String getFechaSalida() {
+	public LocalDate getFechaSalida() {
 		return fechaSalida;
 	}
 
-	public void setFechaSalida(String fechaSalida) {
+	public void setFechaSalida(LocalDate fechaSalida) {
 		this.fechaSalida = fechaSalida;
 	}
 
-	public int getPrecioTotal() {
+	public float getPrecioTotal() {
 		return precioTotal;
 	}
 

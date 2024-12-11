@@ -27,5 +27,10 @@ public class GestionDeHabitaciones {
 		}
 	}
 	
+	public Habitacion getHabitacion(int id) {
+		
+		return listaHabitaciones.get(id);
+	}
+	
 
 }

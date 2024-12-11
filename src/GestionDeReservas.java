@@ -18,8 +18,13 @@ public class GestionDeReservas {
 		}
 	}
 	
-	public void borrarReserva(Reserva r) {
-		listaReservas.remove(r);
+	public void borrarReserva(int idReserva) {
+		for (Reserva r : listaReservas) {
+			if (r.getIdHabitacion() == idReserva) {
+				listaReservas.remove(r);
+				break;
+			}
+		}
 	}
 	
 	public boolean buscarSiHayUnaReserva(int idHabitacion) {
@@ -29,5 +34,26 @@ public class GestionDeReservas {
 		}
 		
 		return false;
+	}
+	
+	public void imprimirReservasPorIdCliente(int idCliente) {
+		for (Reserva r : listaReservas) {
+			if(r.getIdCliente() == idCliente) System.out.println(r.toString());
+		}
+	}
+	
+	public void imprimirReservasPorIdHabitacion(int idHabitacion) {
+		for (Reserva r : listaReservas) {
+			if(r.getIdHabitacion() == idHabitacion) System.out.println(r.toString());
+		}
+	}
+	
+	public float obtenerBeneficioTotal() {
+		float cantidadTotal = 0;
+		for (Reserva r : listaReservas) {
+			cantidadTotal += r.getPrecioTotal();
+		}
+		
+		return cantidadTotal;
 	}
 }
